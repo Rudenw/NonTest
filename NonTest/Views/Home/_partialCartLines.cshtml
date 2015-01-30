@@ -1,0 +1,59 @@
+﻿@model NonTest.Models.OrderPlacementViewModel
+
+<div class="cartRow">
+    <h4>Shopping Cart</h4>
+    <table class="cartTable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShoppingCart.Rows[0].ProductQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShoppingCart.Rows[0].Product.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShoppingCart.Rows[0].Product.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShoppingCart.Rows[0].Product.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShoppingCart.Rows[0].Value)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.ShoppingCart.Rows)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.ProductQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Product.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Product.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Product.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Value)
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div class="CartValue">
+        @Html.DisplayNameFor(model => model.ShoppingCart.FreightCost)
+        <span class="freight">
+            @Html.DisplayFor(model => model.ShoppingCart.FreightCost)
+        </span>
+    </div>
+    <div class="CartValue">
+        @Html.DisplayNameFor(model => model.ShoppingCart.TotalValue)
+        <span>
+            @Html.DisplayFor(model => model.ShoppingCart.TotalValue)
+        </span>
+    </div>
+</div>

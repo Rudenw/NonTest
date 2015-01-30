@@ -1,0 +1,122 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+select {
+    width: 100%;
+    height: 28px;
+}
+
+.orderJumbotron {
+    padding-left: 6%;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 2.1428571435;
+    color: inherit;
+    background-color: #eee;
+}
+
+.productTable {
+    width: 65%;
+}
+
+.table td{
+    vertical-align: inherit;
+    padding: 2px;
+}
+
+#Quantity {
+    width: 48px;
+}
+
+.ProductBtn {
+    padding: 2px;
+}
+
+.expandButton {
+    padding: 2px;
+}
+
+.btn .submitBtn{
+    padding: 8px;
+}
+
+.cartRow {
+    width: 35%;
+}
+
+.cartTable {
+    margin: 3px;
+    width: 100%;
+}
+
+.cartTable tbody>tr>td {
+    padding: 3px;
+}
+
+.cartTable tbody>tr>th {
+    padding: 3px;
+}
+
+.orderListTable {
+    margin: 3px;
+}
+
+.orderListTable tbody>tr>td {
+    padding: 3px;
+}
+
+.orderListTable tbody>tr>th {
+    padding: 3px;
+}
+
+.grayBackground {
+    background-color: #eee;
+}
+
+.CartValue {
+    font-weight: bold;
+    padding-left: 6px;
+}
+.CartValue span {
+    float: right;
+    padding-right: 12px;
+}
+
+.CartValue span.freight {
+    font-weight: normal;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+.RadioButton {
+    margin-right: 15px;
+}

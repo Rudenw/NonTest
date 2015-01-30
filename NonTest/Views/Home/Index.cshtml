@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="orderJumbotron">
+    <h2>Place Order</h2>
+</div>
+    @model NonTest.Models.OrderPlacementViewModel
+
+
+<div class="row">
+    <h4>Products</h4>
+    <table class="table productTable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Price)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Products)
+        {
+            @Html.Partial("_partialProduct", item)
+        }
+    </table>
+</div>
+@using (Html.BeginForm("PlaceOrder", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        @if (Model.ShoppingCart.Rows.Any())
+        {
+            <hr>
+            @Html.Partial("_partialCartLines", Model)
+        }
+    </div>
+    <hr>
+    <div class="row">
+        @Html.Partial("_partialAddress", Model)
+    </div>
+    <hr>
+    <div class="row">
+        @Html.LabelFor(model => Model.PaymentMethods)
+        <br/>
+
+        @foreach (string method in Model.PaymentMethods)
+        {
+            <span class="RadioButton">
+                @Html.RadioButtonFor(model => model.ChosenPaymentMethod, method, false)
+                @Html.LabelFor(model => model.ChosenPaymentMethod, method)
+            </span>
+        }
+        @Html.ValidationMessageFor(model => model.ChosenPaymentMethod, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <input type="submit" value="Place Order" class="btn btn-default submitBtn" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

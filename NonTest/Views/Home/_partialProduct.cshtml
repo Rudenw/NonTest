@@ -1,0 +1,32 @@
+﻿@model NonTest.Models.ProductViewModel
+
+
+@using (Html.BeginForm("Add", "Home", FormMethod.Post))
+{
+    <tr>
+        @Html.HiddenFor(model => Model.ProductId)
+        <td>
+            @Html.EditorFor(model => Model.Quantity)
+            @Html.ValidationMessageFor(model => Model.Quantity, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @Html.DisplayFor(model => Model.Name)
+            @Html.HiddenFor(model => Model.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => Model.Brand)
+            @Html.HiddenFor(model => Model.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(model => Model.Model)
+            @Html.HiddenFor(model => Model.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(model => Model.Price)
+            @Html.HiddenFor(model => Model.Price)
+        </td>
+        <td>
+            <input type="submit" value="Add" class="btn btn-default ProductBtn" />
+        </td>
+    </tr>
+}

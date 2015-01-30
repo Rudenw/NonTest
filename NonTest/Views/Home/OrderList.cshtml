@@ -1,0 +1,68 @@
+﻿@model IEnumerable<NonTest.Models.OrderViewModel>
+
+@{
+    ViewBag.Title = "List all Orders";
+}
+
+<h2>OrderList</h2>
+
+<table class="table orderListTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToAddress.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToAddress.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToAddress.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToAddress.PostalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToAddress.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToAddress.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentMethod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderValue)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(model => item.ShipToAddress.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.ShipToAddress.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.ShipToAddress.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.ShipToAddress.PostalCode)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.ShipToAddress.City)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.ShipToAddress.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.PaymentMethod)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.OrderValue)
+        </td>
+    </tr>
+}
+
+</table>
